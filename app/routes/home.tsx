@@ -3,7 +3,7 @@ import type { Route } from './+types/home';
 import { ContributionGraph } from '~/components/ContributionGraph';
 import { Footer } from '~/components/Footer';
 import { Hero } from '~/components/Hero';
-import { GitHubIcon } from '~/components/icons';
+import { GitHubIcon, GitLabIcon } from '~/components/icons';
 import { Builds, Experience, SectionLabel, WorkWithMe } from '~/components/Sections';
 import { getContributions, getRepos } from '~/lib/github.server';
 import { profile } from '~/lib/profile';
@@ -65,7 +65,15 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
           {Object.keys(contributions.totals).length ? (
             <section className="section">
-              <SectionLabel icon={<GitHubIcon />} tint="var(--color-ink)">
+              <SectionLabel
+                icon={
+                  <>
+                    <GitHubIcon />
+                    <GitLabIcon />
+                  </>
+                }
+                tint="var(--color-ink)"
+              >
                 Contributions
               </SectionLabel>
               <ContributionGraph {...contributions} />

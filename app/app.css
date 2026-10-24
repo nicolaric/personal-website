@@ -416,6 +416,21 @@ button {
   }
 }
 
+.contrib__sources {
+  display: flex;
+  gap: 0.875rem;
+  margin-top: 0.25rem;
+  color: var(--color-faint);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3125rem;
+  }
+}
+
 .contrib__years {
   display: flex;
   flex-wrap: wrap;

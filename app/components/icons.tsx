@@ -12,6 +12,20 @@ export function GitHubIcon(props: IconProps) {
   );
 }
 
+export function GitLabIcon(props: IconProps) {
+  return (
+    <svg {...base} viewBox="0 0 24 24" {...props}>
+      <path fill="#e24329" d="m12 22.5 4.42-13.6H7.58z" />
+      <path fill="#fc6d26" d="M12 22.5 7.58 8.9H1.39z" />
+      <path fill="#fca326" d="M1.39 8.9.05 13.04a.91.91 0 0 0 .33 1.02L12 22.5z" />
+      <path fill="#e24329" d="M1.39 8.9h6.19L4.92.72a.46.46 0 0 0-.87 0z" />
+      <path fill="#fc6d26" d="m12 22.5 4.42-13.6h6.19z" />
+      <path fill="#fca326" d="m22.61 8.9 1.34 4.14a.91.91 0 0 1-.33 1.02L12 22.5z" />
+      <path fill="#e24329" d="M22.61 8.9h-6.19L19.08.72a.46.46 0 0 1 .87 0z" />
+    </svg>
+  );
+}
+
 export function XIcon(props: IconProps) {
   return (
     <svg {...base} viewBox="0 0 24 24" fill="currentColor" {...props}>
