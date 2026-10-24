@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#161616"/>
+  <!-- Mark taken from the wordmark at nexxiot.com/wp-content/uploads/2022/05/logo.svg, centred and scaled. -->
+  <path transform="translate(-34.41 15.66) scale(1.128)" fill="#fff" d="M58.838 25.0447L54.3704 20.6644L60.5703 14.5059L54.3704 8.35739L58.838 3.93691L69.4953 14.5059L58.838 25.0447ZM57.0955 14.4657L46.4383 3.89673L42.0214 8.3172L48.2212 14.4657L42.0214 20.6644L46.4889 25.0849L57.0955 14.4657ZM71.2782 3.89673L66.8107 8.3172L71.2782 12.7477L75.7356 8.3172L71.2782 3.89673ZM71.2782 16.1937L66.7702 20.6644L71.2377 25.0849L75.6951 20.6644L71.2782 16.1937Z"/>
+</svg>
