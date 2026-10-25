@@ -265,6 +265,12 @@ button {
   box-shadow: 0 0 0 1px #17150f14;
 }
 
+.tile--icon {
+  display: grid;
+  place-items: center;
+  color: var(--color-muted);
+}
+
 .tile--sm {
   width: 1.375rem;
   height: 1.375rem;
@@ -535,6 +541,15 @@ button {
   gap: 0.25rem;
 }
 
+.jobs__subhead {
+  margin: 1.75rem 0 -0.75rem;
+  color: var(--color-faint);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .job__summary {
   display: flex;
   align-items: center;
@@ -605,6 +620,19 @@ button {
   padding-left: 0.875rem;
 }
 
+.job__roleHead--link {
+  .job__roleTitle {
+    text-decoration: underline 1.5px transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.22s ease-out;
+  }
+
+  &:hover .job__roleTitle,
+  &:focus-visible .job__roleTitle {
+    text-decoration-color: var(--color-accent-clay);
+  }
+}
+
 .job__roleTitle {
   font-size: 0.875rem;
   font-weight: 500;
@@ -612,6 +640,15 @@ button {
 
 .job__duration {
   color: var(--color-faint);
+}
+
+.job__summary > span.job__chevron {
+  display: inline-flex;
+  width: 14px;
+}
+
+.job__link {
+  margin-left: auto;
 }
 
 .job__chevron {
@@ -761,6 +798,216 @@ button {
   border-radius: 50%;
 }
 
+/* ---------- Press ---------- */
+
+.press {
+  display: grid;
+  margin-top: 1.25rem;
+}
+
+.press__item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 0.625rem;
+  transition: background 0.2s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    background: color-mix(in oklab, var(--color-rule) 45%, transparent);
+  }
+
+  &:hover .press__title {
+    text-decoration-color: var(--color-accent-clay);
+  }
+}
+
+.press__text {
+  display: grid;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.press__title {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  text-decoration: underline 1.5px transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.22s ease-out;
+}
+
+.press__outlet {
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+.press__date {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--color-faint);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Bookshelf ---------- */
+
+.books__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+
+  strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.pager__count {
+  min-width: 2.75rem;
+  color: var(--color-faint);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.pager__button {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 50%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition:
+    translate 0.28s var(--ease-spring),
+    box-shadow 0.28s ease-out,
+    opacity 0.2s ease-out;
+
+  &:hover:not(:disabled) {
+    translate: 0 var(--lift);
+    box-shadow: var(--shadow-card);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+/* One row; each page is exactly --per-page books wide. */
+.books {
+  --per-page: 6;
+  --gap: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--per-page) - 1) * var(--gap)) / var(--per-page));
+  column-gap: var(--gap);
+  margin-top: 0.5rem;
+  /* Room for the hover lift and shadow, which overflow-x would otherwise clip. */
+  padding: 0.5rem 0 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  li {
+    scroll-snap-align: start;
+  }
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+
+  &:hover .book__cover,
+  &:focus-visible .book__cover {
+    translate: 0 calc(-4px * var(--motion));
+    rotate: calc(-1.5deg * var(--motion));
+    box-shadow:
+      0 1px 2px #17150f1f,
+      0 14px 24px -12px #17150f59;
+  }
+}
+
+.book__cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 0.5rem;
+  border-radius: 2px 4px 4px 2px;
+  object-fit: cover;
+  background: var(--color-rule);
+  box-shadow:
+    inset 3px 0 0 #17150f14,
+    0 1px 2px #17150f14,
+    0 8px 16px -10px #17150f40;
+  transition:
+    translate 0.28s var(--ease-spring),
+    rotate 0.28s var(--ease-spring),
+    box-shadow 0.28s ease-out;
+}
+
+.book__cover--blank {
+  display: grid;
+  place-items: center;
+  padding: 0.5rem;
+  background: color-mix(in oklab, var(--color-accent-ochre) 22%, var(--color-paper));
+  color: color-mix(in oklab, var(--color-accent-ochre) 50%, var(--color-ink));
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  line-height: 1.25;
+  text-align: center;
+  overflow: hidden;
+}
+
+.book__title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book__author {
+  color: var(--color-muted);
+  font-size: 0.6875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book__rating {
+  color: var(--color-accent-ochre);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+}
+
+.book__rating--empty {
+  color: var(--color-rule);
+}
+
 /* ---------- Work with me ---------- */
 
 .cta {
@@ -864,6 +1111,19 @@ button {
 
   .job__duration {
     display: none;
+  }
+
+  .books {
+    --per-page: 3;
+  }
+
+  .press__item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .press__date {
+    margin-left: 0;
   }
 
   .job__roleHead {

@@ -4,13 +4,17 @@ import { ContributionGraph } from '~/components/ContributionGraph';
 import { Footer } from '~/components/Footer';
 import { Hero } from '~/components/Hero';
 import { GitHubIcon, GitLabIcon } from '~/components/icons';
-import { Builds, Experience, SectionLabel, WorkWithMe } from '~/components/Sections';
+import { Bookshelf } from '~/components/Bookshelf';
+import { Builds, Experience, Press, SectionLabel, WorkWithMe } from '~/components/Sections';
 import { getContributions, getRepos } from '~/lib/github.server';
+import { getBooks } from '~/lib/goodreads.server';
 import { profile } from '~/lib/profile';
 
 const NAV = [
   { href: '#experience', label: 'Experience' },
   { href: '#builds', label: 'Builds' },
+  { href: '#press', label: 'Press' },
+  { href: '#books', label: 'Books' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -32,12 +36,12 @@ export function headers() {
 }
 
 export async function loader() {
-  const [contributions, repos] = await Promise.all([getContributions(), getRepos()]);
-  return { contributions, repos };
+  const [contributions, repos, books] = await Promise.all([getContributions(), getRepos(), getBooks()]);
+  return { contributions, repos, books };
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  const { contributions, repos } = loaderData;
+  const { contributions, repos, books } = loaderData;
 
   return (
     <>
@@ -82,6 +86,8 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
           <Experience />
           <Builds repos={repos} />
+          <Press />
+          <Bookshelf books={books} />
           <WorkWithMe />
         </main>
       </div>

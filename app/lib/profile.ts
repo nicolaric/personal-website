@@ -8,6 +8,7 @@ export const profile = {
   email: 'nicola@akenza.io',
   avatar: 'https://avatars.githubusercontent.com/u/64309148?v=4',
   siteUrl: 'https://github.com/nicolaric',
+  goodreadsId: '174138101',
 };
 
 export type SocialKind = 'github' | 'x' | 'linkedin' | 'email';
@@ -113,6 +114,92 @@ export const experience: Job[] = [
         highlights: ['Developed frontend apps using Angular and jQuery.', 'Managed the apprenticeship program.', 'Automated VMware ESXi cluster installations.', 'Graduated with a final grade of 5.5/6.'],
       },
     ],
+  },
+];
+
+export const honorary: { organisation: string; href?: string; logo: string; title: string }[] = [
+  {
+    organisation: 'FDP Bezirk Laufenburg',
+    href: 'https://www.fdp-bezirk-laufenburg.ch',
+    logo: '/logos/fdp.svg',
+    title: 'President',
+  },
+  {
+    organisation: 'Stützpunktfeuerwehr Frick',
+    // TODO(nicola): add the brigade's website and swap in its logo.
+    logo: '/logos/feuerwehr.svg',
+    title: 'Firefighter',
+  },
+];
+
+// Source: LinkedIn and the CV. Years only.
+export const education: { school: string; program: string; start: number; end: number; note?: string; href?: string; logo?: string }[] = [
+  {
+    school: 'Unternehmer Campus',
+    program: 'Young Leader programme · Gewerbeverband Basel-Stadt',
+    start: 2020,
+    end: 2021,
+    href: 'https://gewerbe-basel.ch',
+    logo: '/logos/gvbs.svg',
+  },
+  {
+    school: 'GIB Muttenz',
+    program: 'Vocational school, IT apprenticeship',
+    start: 2015,
+    end: 2019,
+    note: 'Graduated with 5.5 / 6',
+    // Now part of BBZ BL.
+    href: 'https://www.bbzbl.ch',
+  },
+  { school: 'Bezirksschule Rheinfelden', program: 'Secondary school', start: 2011, end: 2015 },
+];
+
+// Courses from Google's Project Management certificate on Coursera, newest first.
+export const certifications: { name: string; issuer: string; date: string; href: string }[] = [
+  { name: 'Agile Project Management', issuer: 'Google', date: '2022-12', href: 'https://www.coursera.org/verify/WLJALZ4LF67G' },
+  { name: 'Project Execution: Running the Project', issuer: 'Google', date: '2022-01', href: 'https://www.coursera.org/verify/LM6URJYAV4VK' },
+  { name: 'Project Planning: Putting It All Together', issuer: 'Google', date: '2021-08', href: 'https://www.coursera.org/verify/AYYXNW25Y3HG' },
+  { name: 'Project Initiation: Starting a Successful Project', issuer: 'Google', date: '2021-07', href: 'https://www.coursera.org/verify/UWDCY5AEM4UZ' },
+  { name: 'Foundations of Project Management', issuer: 'Google', date: '2021-07', href: 'https://www.coursera.org/verify/SXXCPF3MW62P' },
+];
+
+// Newest first. Dates are publication dates in Swiss time.
+export const press: { outlet: string; title: string; date: string; href: string }[] = [
+  {
+    outlet: 'Aargauer Zeitung',
+    title: 'Dieser Jungpolitiker erstellt ein KI-Tool zum Rahmenabkommen mit der EU',
+    date: '2025-09-01',
+    href: 'https://www.aargauerzeitung.ch/aargau/fricktal/gipf-oberfrick-ich-haette-nicht-damit-gerechnet-dieser-jungpolitiker-erstellt-tool-mit-kuenstlicher-intelligenz-zum-rahmenabkommen-mit-eu-ld.2809485',
+  },
+  {
+    outlet: 'Heute',
+    title: '1.900 Seiten erklärt: Mann baut KI-Tool für EU-Abkommen',
+    date: '2025-08-15',
+    href: 'https://www.heute.at/s/1900-seiten-erklaert-mann-baut-ki-tool-fuer-eu-abkommen-120124990',
+  },
+  {
+    outlet: '20 Minuten',
+    title: "Von 1'900 Seiten zu präzisen Antworten: Aargauer entwickelt KI-Tool für EU-Abkommen",
+    date: '2025-08-12',
+    href: 'https://www.20min.ch/story/keine-lust-zum-lesen-1900-seiten-schnell-erfassen-aargauer-baut-ki-fuer-eu-abkommen-103396486',
+  },
+  {
+    outlet: 'Neue Fricktaler Zeitung',
+    title: 'Auf Tüscher folgt Richli',
+    date: '2025-03-25',
+    href: 'https://www.nfz.ch/auf-tuescher-folgt-richli',
+  },
+  {
+    outlet: 'Fricktal.info',
+    title: 'FDP Bezirk Laufenburg mit neuem Präsidenten',
+    date: '2025-03-23',
+    href: 'https://fricktal.info/laufenburg/fdp-bezirk-laufenburg-mit-neuem-praesidenten.html',
+  },
+  {
+    outlet: 'Aargauer Zeitung',
+    title: 'Nicola Richli (FDP) im Porträt: Grossratswahlen Aargau 2024',
+    date: '2024-09-17',
+    href: 'https://www.aargauerzeitung.ch/aargau/kanton-aargau/portrait-nicola-richli-aargau-grossratswahlen-2024-ld.2671976',
   },
 ];
 

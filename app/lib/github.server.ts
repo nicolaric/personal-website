@@ -1,8 +1,7 @@
 import gitlab from '~/data/gitlab-contributions.json';
 
+import { cached, getJson } from './cache.server';
 import { featuredRepos, profile } from './profile';
-
-const CACHE_MS = 60 * 60 * 1000;
 
 export type ContributionDay = { date: string; count: number; github: number; gitlab: number; level: number };
 
@@ -21,31 +20,6 @@ export type Repo = {
   forks: number;
   href: string;
 };
-
-const cache = new Map<string, { at: number; value: unknown }>();
-
-async function cached<T>(key: string, fallback: T, load: () => Promise<T>): Promise<T> {
-  const hit = cache.get(key);
-  if (hit && Date.now() - hit.at < CACHE_MS) {
-    return hit.value as T;
-  }
-  try {
-    const value = await load();
-    cache.set(key, { at: Date.now(), value });
-    return value;
-  } catch {
-    // Serve stale data if we have it, otherwise render the page without this section.
-    return (hit?.value as T) ?? fallback;
-  }
-}
-
-async function getJson(url: string) {
-  const response = await fetch(url, { headers: { 'User-Agent': profile.handle } });
-  if (!response.ok) {
-    throw new Error(`${url} responded ${response.status}`);
-  }
-  return response.json();
-}
 
 function getGitHubDays(): Promise<{ date: string; count: number }[]> {
   return cached('github-contributions', [], async () => {

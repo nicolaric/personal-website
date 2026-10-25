@@ -21,3 +21,9 @@ export function formatDuration(start: string, end?: string) {
   const months = total % 12;
   return [years ? `${years} yr${years === 1 ? '' : 's'}` : '', months ? `${months} mo${months === 1 ? '' : 's'}` : ''].filter(Boolean).join(' ');
 }
+
+// '2025-09-01' → '1 Sep 2025'
+export function formatDay(value: string) {
+  const [year, month, day] = value.split('-').map(Number);
+  return `${day} ${MONTHS[month - 1]} ${year}`;
+}
