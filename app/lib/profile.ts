@@ -62,6 +62,7 @@ export const experience: Job[] = [
       {
         title: 'Frontend Engineer',
         start: '2024-02',
+        end: '2026-10',
         // From the akenza-ui git history, Oct 2026: 2,094 commits, 47% of surviving lines by git blame.
         highlights: [
           'Primary frontend engineer: wrote 47% of the current codebase across four Angular apps in a repository dating back to 2019.',
