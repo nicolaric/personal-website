@@ -5,7 +5,7 @@ export const profile = {
   handle: 'nicolaric',
   partOfSpeech: 'noun',
   tagline: 'Software engineer who builds frontends people enjoy using. Terminal-first, keyboard-driven, lifts weights in between deploys.',
-  email: 'nicola@akenza.io',
+  email: 'nicola@richli.me',
   avatar: 'https://avatars.githubusercontent.com/u/64309148?v=4',
   siteUrl: 'https://github.com/nicolaric',
   goodreadsId: '174138101',
