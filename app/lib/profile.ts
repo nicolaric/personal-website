@@ -62,10 +62,14 @@ export const experience: Job[] = [
       {
         title: 'Frontend Engineer',
         start: '2024-02',
+        // From the akenza-ui git history, Oct 2026: 2,094 commits, 47% of surviving lines by git blame.
         highlights: [
-          'Brought in industry-standard monorepo tooling for future scalability.',
-          'Working across multiple projects: AI assistant, core application and dashboards (Angular, TypeScript, Nx, Tailwind, Jest).',
-          'Focused on constantly improving the pace of innovation and quality.',
+          'Primary frontend engineer: wrote 47% of the current codebase across four Angular apps in a repository dating back to 2019.',
+          'Built the frontend of Genio, the AI assistant, from scratch, then embedded it as AI-driven workspace health analysis.',
+          'Led platform-wide migrations end to end: Nx monorepo, Tailwind v4, Keycloak auth, Transloco i18n, Angular 18 to 21, each finished with a CI guard.',
+          'Designed the white-labeling and dark-mode theming system used by enterprise and on-prem customers.',
+          'Shipped Setup Assistant, Audit Logs, Workspace Health, a new dashboards chart engine and a shared authorization layer.',
+          'Set up E2E testing, error monitoring and AI-assisted development workflows for the team.',
         ],
       },
     ],
