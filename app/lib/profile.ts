@@ -49,7 +49,17 @@ export const experience: Job[] = [
       {
         title: 'Co-founder',
         start: '2026-08',
-        highlights: ['AI knowledge platform for Swiss SMEs: answers grounded in your own documents, hosted in Switzerland.'],
+        // From the project-eos git history, Oct 2026: 1,892 commits since 2025-09.
+        highlights: [
+          'AI knowledge platform for Swiss SMEs: answers grounded in your own documents, hosted in Switzerland.',
+          'Built it essentially solo, from an empty repository to a paying multi-tenant SaaS in five months: 365k lines of TypeScript and Python.',
+          'Own agent runtime without LangChain: delegation to sub-agents, durable runs that pause for approval and survive restarts, on-demand MCP tools and model failover.',
+          'Raised retrieval precision@5 from 0.51 to 0.89, guarded by evals in CI.',
+          'Data stays in Switzerland: open-weight models via Infomaniak (including Apertus), Kubernetes on Swiss infrastructure, self-hosted storage, identity and monitoring.',
+          'Integrations: Microsoft 365 sync, a Teams bot, Outlook, Gmail, Jira/Confluence, SAP, Slack, HubSpot, Fedlex, an MCP registry and OpenAPI import.',
+          'Customers include siworks (bauherrenvertreter.ai) and Swissmem (KMG-Check).',
+          'Runs production as an SRE team of one: GitOps with Flux, a rehearsed disaster-recovery plan, postmortems and security-audit fixes.',
+        ],
       },
     ],
   },
